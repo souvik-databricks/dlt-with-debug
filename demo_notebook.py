@@ -1,4 +1,8 @@
 # Databricks notebook source
+# MAGIC %pip install dlt_with_debug
+
+# COMMAND ----------
+
 from pyspark.sql.functions import *
 from pyspark.sql.types import *
 from dlt_with_debug import *
