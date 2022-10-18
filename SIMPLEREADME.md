@@ -1,7 +1,5 @@
 ### Installation
 
-> *Note*: The library is not yet published in PyPI.
-
 pip install in your Databricks Notebook
 
 ```python

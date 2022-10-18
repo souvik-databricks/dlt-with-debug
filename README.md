@@ -48,8 +48,6 @@ pipeline development by having a unified source code for both DLT run and Non-DL
 
 ### Installation
 
-> *Note*: The library is not yet published in PyPI.
-
 pip install in your Databricks Notebook
 
 ```python
@@ -128,7 +126,7 @@ if not pipeline_id:
 
 ```
 
-![Alt Text](https://i.imgur.com/y1w6VBB.png)
+![Alt Text](https://i.ibb.co/VQzZsZR/Screenshot-2022-10-18-at-5-34-14-AM.png)
 
 <p align="right">(<a href="#top">back to top</a>)</p>
 

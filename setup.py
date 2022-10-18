@@ -15,7 +15,7 @@ setup(
     name="dlt_with_debug",
     version=VERSION,
     author="Souvik Pratiher",
-    author_email="spratiher9@gmail.com",
+    author_email="souvik.pratiher@databricks.com",
     description=DESCRIPTION,
     long_description_content_type="text/markdown",
     long_description=long_description,
