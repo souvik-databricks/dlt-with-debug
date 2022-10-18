@@ -71,4 +71,12 @@ if not pipeline_id:
 
 # COMMAND ----------
 
+# MAGIC %md-sandbox
+# MAGIC 
+# MAGIC ## The job linked [here](https://e2-demo-field-eng.cloud.databricks.com/?o=1444828305810485#joblist/pipelines/08c3ccd3-15b3-450a-9860-fb4482d1d9b8/updates/57549f72-7f39-4fa5-bf87-24e4d6504e91) 
+# MAGIC 
+# MAGIC <a href="https://ibb.co/Yy1MxMm"><img src="https://i.ibb.co/MGt4m4r/Screenshot-2022-10-18-at-5-34-14-AM.png" alt="Screenshot-2022-10-18-at-5-34-14-AM" border="0"></a>
+
+# COMMAND ----------
+
 
