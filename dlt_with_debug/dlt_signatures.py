@@ -53,7 +53,7 @@ def get_name_inv_statement(f,name,inv):
     func = undecorated(f)
     count = func().filter(inv).count()
     total = func().count()
-    stmt = f"Expectation {name} will affect {count} records which is {orig.round((count/total)*100,2)}% of total {total} records"
+    stmt = f"Expectation {name} will affect {count} records which is {orig.round(((total-count)/total)*100,2)}% of total {total} records"
     return stmt
 
 
@@ -110,7 +110,7 @@ def get_expectations_statement(f,expectations):
     count = func().filter(expec_cond).count()
     total = func().count()
     expec_txt = " AND ".join(list(expectations.keys()))
-    stmt = f"Expectations {expec_txt} will affect {count} records which is {orig.round((count / total) * 100, 2)}% of total {total} records"
+    stmt = f"Expectations {expec_txt} will affect {count} records which is {orig.round(((total-count) / total) * 100, 2)}% of total {total} records"
     return stmt
 
 
