@@ -11,6 +11,8 @@
   </p>
 </div>
 
+**Drop a ⭐️ if you liked the project and it helped you to have a smoother experience while working with DLTs** 
+
 ## About The Project
 
 Delta Live Tables (DLTs) are a great way to design data pipelines with only focusing on the core business logic.
