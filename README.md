@@ -18,7 +18,7 @@ It makes the life of data engineers easy but while the development workflows are
 __*debugging and seeing how the data looks after each transformation step*__ in a typical DLT pipeline it becomes very 
 painful and cumbersome as we dont have the DLT package available in our interactive environment.
 
-Enter <font size="4"><b>dlt with debug</b></font> a lightweight decorator utility which allows developers to do interactive
+Enter **dlt-with-debug** a lightweight decorator utility which allows developers to do interactive
 pipeline development by having a unified source code for both DLT run and Non-DLT interactive notebook run. 
 
 
@@ -39,7 +39,7 @@ pip install in your Databricks Notebook
 
 _**PyPI**_
 ```python
-%pip install dlt_with_debug
+%pip install dlt-with-debug
 ```
 
 <p align="right">(<a href="#top">back to top</a>)</p>
