@@ -35,6 +35,11 @@ pipeline development by having a unified source code for both DLT run and Non-DL
 
 <p align="right">(<a href="#top">back to top</a>)</p>
 
+### Sample Demo Notebook
+
+[Click here](https://github.com/souvik-databricks/dlt-with-debug/tree/main/demo_notebook) to go to a sample notebook which you can import in your workspace to see the utility in action
+
+
 ### Installation
 
 pip install in your Databricks Notebook
