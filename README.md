@@ -165,7 +165,7 @@ showoutput(clickstream_clean)
 ## Same sample `DLT with debug` DLT pipeline executed as part of a delta live table
 ![Alt Text](https://i.ibb.co/VQzZsZR/Screenshot-2022-10-18-at-5-34-14-AM.png)
 
-> Below we can the expectation results also match up with the expectation metrics that we got from dltwithdebug earlier 
+> Below we can see the expectation results also match up with the expectation metrics that we got from dltwithdebug earlier 
 > with `showoutput(clickstream_clean)`
 > ![Expectation Results](https://raw.githubusercontent.com/souvik-databricks/random_snaps/main/expectations.png)
 
