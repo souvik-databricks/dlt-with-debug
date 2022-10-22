@@ -13,7 +13,17 @@
 
 **Drop a ⭐️ if you liked the project and it helped you to have a smoother experience while working with DLTs** 
 
-## About The Project
+# Table of Contents
+1. [About the project](#about-the-project)
+2. [Demo Notebook](#sample-demo-notebook)
+3. [Installation](#installation)
+4. [Usage](#usage)
+5. [Sample Pipeline Example](#sample-dlt-with-debug-dlt-pipeline-example)
+6. [Quick API guide](#quick-api-guide)
+7. [Functionalities](#functionality)
+8. [Limitation](#limitation)
+
+## About The Project 
 
 Delta Live Tables (DLTs) are a great way to design data pipelines with only focusing on the core business logic.
 It makes the life of data engineers easy but while the development workflows are streamlined in DLT, when it comes to 
@@ -35,7 +45,7 @@ pipeline development by having a unified source code for both DLT run and Non-DL
 
 <p align="right">(<a href="#top">back to top</a>)</p>
 
-### Sample Demo Notebook
+### Sample Demo Notebook 
 
 [Click here](https://github.com/souvik-databricks/dlt-with-debug/tree/main/demo_notebook) to go to a sample notebook which you can import in your workspace to see the utility in action
 
@@ -251,7 +261,7 @@ else:
 
 <p align="right">(<a href="#top">back to top</a>)</p>
 
-## Upcoming functionality
+## Functionality
 
 As of now the following DLT APIs are covered for interactive use:
 
