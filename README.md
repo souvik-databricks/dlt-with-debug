@@ -1,7 +1,7 @@
 <div id="top"></div>
 <br />
 <div align="center">
-
+  <img src="https://raw.githubusercontent.com/souvik-databricks/random_snaps/main/dlt_logo.png" alt="Delta Live Table" width="450" height="250">
   <h3 align="center">DLT with Debug</h3>
 
   <p align="center">
