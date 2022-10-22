@@ -18,9 +18,15 @@ def dltwithdebug(g_ns):
         f_undec = undecorated(f)
         code = getsource(f_undec)
         parsed_code = remove_dltwithdebug_decorator(code)
-        print(parsed_code)
         addglobals(g_ns)
         exec(parsed_code, g_ns)
         return f(*args, **kwargs)
     return wrapped
   return true_decorator
+
+def showoutput(f):
+  if pipeline_id:
+    df = f()
+    df.display()
+  else:
+    None
