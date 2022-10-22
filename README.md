@@ -41,10 +41,6 @@ _**PyPI**_
 ```python
 %pip install dlt_with_debug
 ```
-_**GitHub**_
-```python
-%pip install -e git+https://github.com/souvik-databricks/dlt-with-debug.git#"egg=dlt_with_debug"
-```
 
 <p align="right">(<a href="#top">back to top</a>)</p>
 
