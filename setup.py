@@ -4,10 +4,10 @@ import os
 
 here = os.path.abspath(os.path.dirname(__file__))
 
-with codecs.open(os.path.join(here, "SIMPLEREADME.md"), encoding="utf-8") as fh:
+with codecs.open(os.path.join(here, "README.md"), encoding="utf-8") as fh:
     long_description = "\n" + fh.read()
 
-VERSION = '1.0'
+VERSION = '2.0'
 DESCRIPTION = 'Utility for running workflows leveraging delta live tables from interactive notebooks'
 
 # Setting up
