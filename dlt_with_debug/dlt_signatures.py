@@ -119,7 +119,7 @@ def expect_all(expectations=None):
         @wraps(f)
         def wrapped(*args, **kwargs):
             if expectations:
-                stmt = get_expectations_statement(f,expectations)
+                stmt = "'expect_all' "+get_expectations_statement(f,expectations)
                 print(stmt)
             return f(*args, **kwargs)
 
@@ -133,7 +133,7 @@ def expect_all_or_drop(expectations=None):
         @wraps(f)
         def wrapped(*args, **kwargs):
             if expectations:
-                stmt = get_expectations_statement(f,expectations)
+                stmt = "'expect_all_or_drop' "+get_expectations_statement(f,expectations)
                 print(stmt)
             return f(*args, **kwargs)
 
@@ -147,7 +147,7 @@ def expect_all_or_fail(expectations=None):
         @wraps(f)
         def wrapped(*args, **kwargs):
             if expectations:
-                stmt = get_expectations_statement(f,expectations)
+                stmt = "'expect_all_or_fail' "+get_expectations_statement(f,expectations)
                 print(stmt)
             return f(*args, **kwargs)
 
