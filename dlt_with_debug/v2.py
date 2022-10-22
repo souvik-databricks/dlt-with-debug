@@ -25,7 +25,7 @@ def dltwithdebug(g_ns):
   return true_decorator
 
 def showoutput(f):
-  if pipeline_id:
+  if not pipeline_id:
     df = f()
     df.display()
   else:
