@@ -269,7 +269,7 @@ As of now the following DLT APIs are covered for interactive use:
    - `dlt.read_stream`
    - `dlt.create_table`
    - `dlt.create_view`
-   - `dlt.table` <-- This one sometimes gets overridden with `spark.table`
+   - `dlt.table` <-- This one sometimes gets overridden with `spark.table` so use `dlt.create_table` instead.
    - `dlt.view` 
    - `dlt.expect`
    - `dlt.expect_or_fail`
