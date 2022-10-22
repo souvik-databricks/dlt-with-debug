@@ -11,8 +11,6 @@
   </p>
 </div>
 
-**Drop a ⭐️ if you liked the project and it helped you to have a smoother experience while working with DLTs** 
-
 # Table of Contents
 1. [About the project](#about-the-project)
 2. [Demo Notebook](#sample-demo-notebook)
@@ -296,3 +294,5 @@ So instead of `spark.table("LIVE.func_name")` use `dlt.read("func_name")` or `dl
 Distributed under the MIT License.
 
 <p align="right">(<a href="#top">back to top</a>)</p>
+
+**Drop a ⭐️ if you liked the project and it helped you to have a smoother experience while working with DLTs**
