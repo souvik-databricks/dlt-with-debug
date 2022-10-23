@@ -70,7 +70,8 @@ _**PyPI**_
 ### Usage
 - *In our notebooks containing DLT Jobs the imports changes slightly as below and also the extra decorator 
 `@dltwithdebug(globals())` is added to the functions*
-    ```
+
+    ```python
     # Imports
     from dlt_with_debug import dltwithdebug, pipeline_id, showoutput
     
