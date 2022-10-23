@@ -70,12 +70,29 @@ _**PyPI**_
 ### Usage
 - *In our notebooks containing DLT Jobs the imports changes slightly as below*
     ```
+    # Imports
     from dlt_with_debug import dltwithdebug, pipeline_id, showoutput
     
     if pipeline_id:
       import dlt
     else:
       from dlt_with_debug import dlt
+  
+    
+    # Now define your dlt code with one extra decorator "@dltwithdebug(globals())" added to it
+    
+    @dlt.create_table(comment = "dlt pipeline example")
+    @dltwithdebug(globals())
+    def click_raw_bz(): 
+         return (
+             spark.read.option("header","true").csv("dbfs:/FileStore/souvikpratiher/click.csv")
+    )
+    
+    # See the output
+    showoutput(click_raw_bz)
+  
+    # Get the output data to a dataframe
+    df = click_raw_bz()
     ```
 > **Note**: 
 > 1. Use the `dlt.create_table()` API instead of `dlt.table()` as `dlt.table()` sometimes gets mixed with `spark.table()` 
