@@ -68,7 +68,8 @@ _**PyPI**_
 <p align="right">(<a href="#top">back to top</a>)</p>
 
 ### Usage
-- *In our notebooks containing DLT Jobs the imports changes slightly as below*
+- *In our notebooks containing DLT Jobs the imports changes slightly as below and also the extra decorator 
+`@dltwithdebug(globals())` is added to the functions*
     ```
     # Imports
     from dlt_with_debug import dltwithdebug, pipeline_id, showoutput
