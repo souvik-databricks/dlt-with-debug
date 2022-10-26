@@ -6,7 +6,7 @@
 from pyspark.sql.functions import *
 from pyspark.sql.types import *
 
-from dlt_with_debug import dltwithdebug, pipeline_id, showoutput
+from dlt_with_debug import pipeline_id, showoutput
 
 if pipeline_id:
   import dlt
@@ -19,13 +19,12 @@ json_path = "/databricks-datasets/wikipedia-datasets/data-001/clickstream/raw-un
 
 # COMMAND ----------
 
-@dlt.create_table(
+@dlt.table(
   comment="The raw wikipedia click stream dataset, ingested from /databricks-datasets.",
   table_properties={
     "quality": "bronze"
   }
 )
-@dltwithdebug(globals())
 def clickstream_raw():
   return (
     spark.read.option("inferSchema", "true").json(json_path)
@@ -37,7 +36,7 @@ showoutput(clickstream_raw)
 
 # COMMAND ----------
 
-@dlt.create_table(
+@dlt.table(
   comment="Wikipedia clickstream dataset with cleaned-up datatypes / column names and quality expectations.",
   table_properties={
     "quality": "silver"
@@ -46,7 +45,6 @@ showoutput(clickstream_raw)
 @dlt.expect("valid_current_page", "current_page_id IS NOT NULL AND current_page_title IS NOT NULL")
 @dlt.expect_or_fail("valid_count", "click_count > 0")
 @dlt.expect_all({'valid_prev_page_id': "previous_page_id IS NOT NULL"})
-@dltwithdebug(globals())
 def clickstream_clean():
   return (
     dlt.read("clickstream_raw")
