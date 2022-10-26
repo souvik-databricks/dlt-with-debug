@@ -68,12 +68,10 @@ _**PyPI**_
 <p align="right">(<a href="#top">back to top</a>)</p>
 
 ### Usage
-- *In our notebooks containing DLT Jobs the imports changes slightly as below and also the extra decorator 
-`@dltwithdebug(globals())` is added to the functions*
 
     ```python
     # Imports
-    from dlt_with_debug import dltwithdebug, pipeline_id, showoutput
+    from dlt_with_debug import pipeline_id, showoutput
     
     if pipeline_id:
       import dlt
@@ -83,8 +81,7 @@ _**PyPI**_
     
     # Now define your dlt code with one extra decorator "@dltwithdebug(globals())" added to it
     
-    @dlt.create_table(comment = "dlt pipeline example")
-    @dltwithdebug(globals())
+    @dlt.table(comment = "dlt pipeline example")
     def click_raw_bz(): 
          return (
              spark.read.option("header","true").csv("dbfs:/FileStore/souvikpratiher/click.csv")
@@ -96,11 +93,6 @@ _**PyPI**_
     # Get the output data to a dataframe
     df = click_raw_bz()
     ```
-> **Note**: 
-> 1. Use the `dlt.create_table()` API instead of `dlt.table()` as `dlt.table()` sometimes gets mixed with `spark.table()` 
-in the global namespace.
-> 2. Always pass the `globals()` namespace to `dltwithdebug` decorator like this `@dltwithdebug(globals())`
-
 
 <p align="right">(<a href="#top">back to top</a>)</p>
 
@@ -123,7 +115,7 @@ from pyspark.sql.types import *
 # dltwithdebug as that's the entry point to interactive DLT workflows
 # pipeline_id to ensure we import the dlt package based on environment
 # showoutput is a helper function for seeing the output result along with expectation metrics if any is specified
-from dlt_with_debug import dltwithdebug, pipeline_id, showoutput
+from dlt_with_debug import pipeline_id
 
 if pipeline_id:
   import dlt
@@ -138,13 +130,12 @@ Cmd 4
 ```python
 # Notice we are using dlt.create_table instead of dlt.table
 
-@dlt.create_table(
+@dlt.table(
   comment="The raw wikipedia click stream dataset, ingested from /databricks-datasets.",
   table_properties={
     "quality": "bronze"
   }
 )
-@dltwithdebug(globals())
 def clickstream_raw():
   return (
     spark.read.option("inferSchema", "true").json(json_path)
@@ -161,7 +152,7 @@ showoutput(clickstream_raw)
 
 Cmd 6
 ```python
-@dlt.create_table(
+@dlt.table(
   comment="Wikipedia clickstream dataset with cleaned-up datatypes / column names and quality expectations.",
   table_properties={
     "quality": "silver"
@@ -170,7 +161,6 @@ Cmd 6
 @dlt.expect("valid_current_page", "current_page_id IS NOT NULL AND current_page_title IS NOT NULL")
 @dlt.expect_or_fail("valid_count", "click_count > 0")
 @dlt.expect_all({'valid_prev_page_id': "previous_page_id IS NOT NULL"})
-@dltwithdebug(globals())
 def clickstream_clean():
   return (
     dlt.read("clickstream_raw")
@@ -208,7 +198,7 @@ showoutput(clickstream_clean)
 #### Table syntax
 
 ```python
-@dlt.create_table(   # <-- Notice we are using the dlt.create_table() instead of dlt.table()
+@dlt.table(
   name="<name>",
   comment="<comment>",
   spark_conf={"<key>" : "<value", "<key" : "<value>"},
@@ -223,7 +213,6 @@ showoutput(clickstream_clean)
 @dlt.expect_all
 @dlt.expect_all_or_drop
 @dlt.expect_all_or_fail
-@dltwithdebug(globals())    # <-- This dltwithdebug(globals()) needs to be added
 def <function-name>():
     return (<query>)
 ```
@@ -231,7 +220,7 @@ def <function-name>():
 #### View syntax
 
 ```python
-@dlt.create_view(    # <-- Notice we are using the dlt.create_view() instead of dlt.view()
+@dlt.view(    
   name="<name>",
   comment="<comment>")
 @dlt.expect
@@ -240,7 +229,6 @@ def <function-name>():
 @dlt.expect_all
 @dlt.expect_all_or_drop
 @dlt.expect_all_or_fail
-@dltwithdebug(globals())    # <-- This dltwithdebug(globals()) needs to be added
 def <function-name>():
     return (<query>)
 ```
@@ -253,8 +241,7 @@ showoutput(function_name)  # <-- showoutput(function_name)
                            # The name of the function which is wrapped by the dltdecorators
                            
                            # For example:
-                           # @dlt.create_table()
-                           # @dltwithdebug(globals())
+                           # @dlt.table()
                            # def step_one():
                            #    return spark.read.csv()
 
@@ -268,7 +255,7 @@ showoutput(function_name)  # <-- showoutput(function_name)
 # dltwithdebug as that's the entry point to interactive DLT workflows
 # pipeline_id to ensure we import the dlt package based on environment
 # showoutput is a helper function for seeing the output result along with expectation metrics if any is specified
-from dlt_with_debug import dltwithdebug, pipeline_id, showoutput
+from dlt_with_debug import pipeline_id
 
 if pipeline_id:
   import dlt
@@ -286,9 +273,9 @@ As of now the following DLT APIs are covered for interactive use:
 
    - `dlt.read`
    - `dlt.read_stream`
-   - `dlt.create_table`
-   - `dlt.create_view`
-   - `dlt.table` <-- This one sometimes gets overridden with `spark.table` so use `dlt.create_table` instead.
+   - `dlt.table`
+   - `dlt.view`
+   - `dlt.table`
    - `dlt.view` 
    - `dlt.expect`
    - `dlt.expect_or_fail`
