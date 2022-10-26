@@ -26,7 +26,7 @@
 Delta Live Tables (DLTs) are a great way to design data pipelines with only focusing on the core business logic.
 It makes the life of data engineers easy but while the development workflows are streamlined in DLT, when it comes to 
 __*debugging and seeing how the data looks after each transformation step*__ in a typical DLT pipeline it becomes very 
-painful and cumbersome as we dont have the DLT package available in our interactive environment.
+tedious as we dont have the DLT package available in our interactive environment.
 
 Enter **dlt-with-debug** a lightweight decorator utility which allows developers to do interactive
 pipeline development by having a unified source code for both DLT run and Non-DLT interactive notebook run. 
