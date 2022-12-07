@@ -5,7 +5,7 @@ from dlt_with_debug.dlt_signatures import addglobals
 from pyspark.sql import SparkSession
 
 spark = SparkSession.getActiveSession()
-pipeline_id = spark.conf.get("pipelines.id", None)
+pipeline_id = spark.conf.get("pipelines.id", None) if spark else None
 
 
 def dltwithdebug(g_ns):
